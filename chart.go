@@ -537,7 +537,7 @@ func parseChartOptions(opts *Chart) (*Chart, error) {
 //	import (
 //	    "fmt"
 //
-//	    "github.com/xuri/excelize/v2"
+//	    "github.com/novdcm/excelize/v2"
 //	)
 //
 //	func main() {
@@ -882,7 +882,7 @@ func parseChartOptions(opts *Chart) (*Chart, error) {
 //	import (
 //	    "fmt"
 //
-//	    "github.com/xuri/excelize/v2"
+//	    "github.com/novdcm/excelize/v2"
 //	)
 //
 //	func main() {

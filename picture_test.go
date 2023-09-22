@@ -41,7 +41,7 @@ func TestAddPicture(t *testing.T) {
 		&GraphicOptions{OffsetX: 140, OffsetY: 120, Hyperlink: "#Sheet2!D8", HyperlinkType: "Location"}))
 	// Test add picture to worksheet with offset, external hyperlink and positioning
 	assert.NoError(t, f.AddPicture("Sheet1", "F21", filepath.Join("test", "images", "excel.jpg"),
-		&GraphicOptions{OffsetX: 10, OffsetY: 10, Hyperlink: "https://github.com/xuri/excelize", HyperlinkType: "External", Positioning: "oneCell"}))
+		&GraphicOptions{OffsetX: 10, OffsetY: 10, Hyperlink: "https://github.com/novdcm/excelize", HyperlinkType: "External", Positioning: "oneCell"}))
 
 	file, err := os.ReadFile(filepath.Join("test", "images", "excel.png"))
 	assert.NoError(t, err)

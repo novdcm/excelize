@@ -62,7 +62,7 @@ func parseGraphicOptions(opts *GraphicOptions) *GraphicOptions {
 //	    _ "image/jpeg"
 //	    _ "image/png"
 //
-//	    "github.com/xuri/excelize/v2"
+//	    "github.com/novdcm/excelize/v2"
 //	)
 //
 //	func main() {
@@ -97,7 +97,7 @@ func parseGraphicOptions(opts *GraphicOptions) *GraphicOptions {
 //	            LockAspectRatio: false,
 //	            OffsetX:         15,
 //	            OffsetY:         10,
-//	            Hyperlink:       "https://github.com/xuri/excelize",
+//	            Hyperlink:       "https://github.com/novdcm/excelize",
 //	            HyperlinkType:   "External",
 //	            Positioning:     "oneCell",
 //	        },
@@ -177,7 +177,7 @@ func (f *File) AddPicture(sheet, cell, name string, opts *GraphicOptions) error 
 //	    _ "image/jpeg"
 //	    "os"
 //
-//	    "github.com/xuri/excelize/v2"
+//	    "github.com/novdcm/excelize/v2"
 //	)
 //
 //	func main() {

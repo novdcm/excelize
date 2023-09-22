@@ -387,9 +387,9 @@ func TestSetCellHyperLink(t *testing.T) {
 	f, err := OpenFile(filepath.Join("test", "Book1.xlsx"))
 	assert.NoError(t, err)
 	// Test set cell hyperlink in a work sheet already have hyperlinks
-	assert.NoError(t, f.SetCellHyperLink("Sheet1", "B19", "https://github.com/xuri/excelize", "External"))
+	assert.NoError(t, f.SetCellHyperLink("Sheet1", "B19", "https://github.com/novdcm/excelize", "External"))
 	// Test add first hyperlink in a work sheet
-	assert.NoError(t, f.SetCellHyperLink("Sheet2", "C1", "https://github.com/xuri/excelize", "External"))
+	assert.NoError(t, f.SetCellHyperLink("Sheet2", "C1", "https://github.com/novdcm/excelize", "External"))
 	// Test add Location hyperlink in a work sheet
 	assert.NoError(t, f.SetCellHyperLink("Sheet2", "D6", "Sheet1!D8", "Location"))
 	// Test add Location hyperlink with display & tooltip in a work sheet
@@ -411,7 +411,7 @@ func TestSetCellHyperLink(t *testing.T) {
 	ws, ok := f.Sheet.Load("xl/worksheets/sheet1.xml")
 	assert.True(t, ok)
 	ws.(*xlsxWorksheet).Hyperlinks = &xlsxHyperlinks{Hyperlink: make([]xlsxHyperlink, 65530)}
-	assert.EqualError(t, f.SetCellHyperLink("Sheet1", "A65531", "https://github.com/xuri/excelize", "External"), ErrTotalSheetHyperlinks.Error())
+	assert.EqualError(t, f.SetCellHyperLink("Sheet1", "A65531", "https://github.com/novdcm/excelize", "External"), ErrTotalSheetHyperlinks.Error())
 
 	f = NewFile()
 	_, err = f.workSheetReader("Sheet1")
@@ -419,16 +419,16 @@ func TestSetCellHyperLink(t *testing.T) {
 	ws, ok = f.Sheet.Load("xl/worksheets/sheet1.xml")
 	assert.True(t, ok)
 	ws.(*xlsxWorksheet).MergeCells = &xlsxMergeCells{Cells: []*xlsxMergeCell{{Ref: "A:A"}}}
-	err = f.SetCellHyperLink("Sheet1", "A1", "https://github.com/xuri/excelize", "External")
+	err = f.SetCellHyperLink("Sheet1", "A1", "https://github.com/novdcm/excelize", "External")
 	assert.EqualError(t, err, newCellNameToCoordinatesError("A", newInvalidCellNameError("A")).Error())
 
 	// Test update cell hyperlink
 	f = NewFile()
 	assert.NoError(t, f.SetCellHyperLink("Sheet1", "A1", "https://github.com", "External"))
-	assert.NoError(t, f.SetCellHyperLink("Sheet1", "A1", "https://github.com/xuri/excelize", "External"))
+	assert.NoError(t, f.SetCellHyperLink("Sheet1", "A1", "https://github.com/novdcm/excelize", "External"))
 	link, target, err := f.GetCellHyperLink("Sheet1", "A1")
 	assert.Equal(t, link, true)
-	assert.Equal(t, "https://github.com/xuri/excelize", target)
+	assert.Equal(t, "https://github.com/novdcm/excelize", target)
 	assert.NoError(t, err)
 }
 
@@ -442,7 +442,7 @@ func TestGetCellHyperLink(t *testing.T) {
 	link, target, err := f.GetCellHyperLink("Sheet1", "A22")
 	assert.NoError(t, err)
 	assert.Equal(t, link, true)
-	assert.Equal(t, target, "https://github.com/xuri/excelize")
+	assert.Equal(t, target, "https://github.com/novdcm/excelize")
 
 	link, target, err = f.GetCellHyperLink("Sheet2", "D6")
 	assert.NoError(t, err)
@@ -1584,7 +1584,7 @@ func prepareTestBook1() (*File, error) {
 		&GraphicOptions{
 			OffsetX:       10,
 			OffsetY:       10,
-			Hyperlink:     "https://github.com/xuri/excelize",
+			Hyperlink:     "https://github.com/novdcm/excelize",
 			HyperlinkType: "External",
 			Positioning:   "oneCell",
 		},
