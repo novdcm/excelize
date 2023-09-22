@@ -20,13 +20,15 @@ Excelize is a library written in pure Go providing a set of functions that allow
 ### Installation
 
 ```bash
-go get github.com/xuri/excelize
+go get github.com/novdcm/excelize  # atempt to resolve conflict in "module declared" path and "required as" path
+#go get github.com/xuri/excelize
 ```
 
 - If your packages are managed using [Go Modules](https://go.dev/blog/using-go-modules), please install with following command.
 
 ```bash
-go get github.com/xuri/excelize/v2
+go get github.com/novdcm/excelize/v2  # atempt to resolve conflict in "module declared" path and "required as" path
+#go get github.com/xuri/excelize/v2
 ```
 
 ### Create spreadsheet
@@ -39,7 +41,7 @@ package main
 import (
     "fmt"
 
-    "github.com/xuri/excelize/v2"
+    "github.com/novdcm/excelize/v2"
 )
 
 func main() {
@@ -77,7 +79,7 @@ package main
 import (
     "fmt"
 
-    "github.com/xuri/excelize/v2"
+    "github.com/novdcm/excelize/v2"
 )
 
 func main() {
@@ -126,7 +128,7 @@ package main
 import (
     "fmt"
 
-    "github.com/xuri/excelize/v2"
+    "github.com/novdcm/excelize/v2"
 )
 
 func main() {
@@ -192,7 +194,7 @@ import (
     _ "image/jpeg"
     _ "image/png"
 
-    "github.com/xuri/excelize/v2"
+    "github.com/novdcm/excelize/v2"
 )
 
 func main() {
